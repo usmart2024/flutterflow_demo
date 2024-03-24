@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "564385018948",
+    "project_id": "leilao-ea4ea",
+    "storage_bucket": "leilao-ea4ea.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564385018948:android:52862ff9f458d4ea127811",
+        "android_client_info": {
+          "package_name": "com.usmart.leilao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlLMi4uhqB52MQlwn9e_DpQq3ZfcG3XkA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
