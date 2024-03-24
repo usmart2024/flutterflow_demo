@@ -4,8 +4,11 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'login_leilao_model.dart';
 export 'login_leilao_model.dart';
 
@@ -38,8 +41,8 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
           curve: Curves.bounceOut,
           delay: 0.ms,
           duration: 300.ms,
-          begin: const Offset(0.6, 0.6),
-          end: const Offset(1.0, 1.0),
+          begin: Offset(0.6, 0.6),
+          end: Offset(1.0, 1.0),
         ),
       ],
     ),
@@ -58,8 +61,8 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
           curve: Curves.easeInOut,
           delay: 100.ms,
           duration: 400.ms,
-          begin: const Offset(0.0, 30.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -78,8 +81,8 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
           curve: Curves.easeInOut,
           delay: 150.ms,
           duration: 400.ms,
-          begin: const Offset(0.0, 30.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 30.0),
+          end: Offset(0.0, 0.0),
         ),
       ],
     ),
@@ -97,15 +100,15 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 400.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
+          begin: Offset(0.0, 60.0),
+          end: Offset(0.0, 0.0),
         ),
         TiltEffect(
           curve: Curves.easeInOut,
           delay: 200.ms,
           duration: 400.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
+          begin: Offset(-0.349, 0),
+          end: Offset(0, 0),
         ),
       ],
     ),
@@ -116,7 +119,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
     super.initState();
     _model = createModel(context, () => LoginLeilaoModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressController ??= TextEditingController(text: '0');
     _model.emailAddressFocusNode ??= FocusNode();
 
     _model.passwordController ??= TextEditingController();
@@ -154,9 +157,9 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                     FlutterFlowTheme.of(context).error,
                     FlutterFlowTheme.of(context).tertiary
                   ],
-                  stops: const [0.0, 0.5, 1.0],
-                  begin: const AlignmentDirectional(-1.0, -1.0),
-                  end: const AlignmentDirectional(1.0, 1.0),
+                  stops: [0.0, 0.5, 1.0],
+                  begin: AlignmentDirectional(-1.0, -1.0),
+                  end: AlignmentDirectional(1.0, 1.0),
                 ),
               ),
               child: Container(
@@ -165,12 +168,12 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: [
-                      const Color(0x00FFFFFF),
+                      Color(0x00FFFFFF),
                       FlutterFlowTheme.of(context).secondaryBackground
                     ],
-                    stops: const [0.0, 1.0],
-                    begin: const AlignmentDirectional(0.0, -1.0),
-                    end: const AlignmentDirectional(0, 1.0),
+                    stops: [0.0, 1.0],
+                    begin: AlignmentDirectional(0.0, -1.0),
+                    end: AlignmentDirectional(0, 1.0),
                   ),
                 ),
                 child: Column(
@@ -185,7 +188,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                         borderRadius: BorderRadius.circular(16.0),
                       ),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.animation,
                           color: FlutterFlowTheme.of(context).primary,
@@ -196,7 +199,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                         animationsMap['containerOnPageLoadAnimation']!),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                       child: Text(
                         'Sign In',
                         style: FlutterFlowTheme.of(context).headlineSmall,
@@ -205,7 +208,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
                         'Use the account below to sign in.',
                         style: FlutterFlowTheme.of(context).labelMedium,
@@ -217,23 +220,23 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
               ),
             ),
             Align(
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
+                padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 16.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                      child: SizedBox(
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                      child: Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.emailAddressController,
                           focusNode: _model.emailAddressFocusNode,
                           autofocus: true,
-                          autofillHints: const [AutofillHints.email],
+                          autofillHints: [AutofillHints.email],
                           obscureText: false,
                           decoration: InputDecoration(
                             labelText: 'Email',
@@ -270,7 +273,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding: const EdgeInsets.all(24.0),
+                            contentPadding: EdgeInsets.all(24.0),
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                           keyboardType: TextInputType.emailAddress,
@@ -281,13 +284,13 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
-                      child: SizedBox(
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                      child: Container(
                         width: double.infinity,
                         child: TextFormField(
                           controller: _model.passwordController,
                           focusNode: _model.passwordFocusNode,
-                          autofillHints: const [AutofillHints.password],
+                          autofillHints: [AutofillHints.password],
                           obscureText: !_model.passwordVisibility,
                           decoration: InputDecoration(
                             labelText: 'Password',
@@ -324,7 +327,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                             filled: true,
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
-                            contentPadding: const EdgeInsets.all(24.0),
+                            contentPadding: EdgeInsets.all(24.0),
                             suffixIcon: InkWell(
                               onTap: () => setState(
                                 () => _model.passwordVisibility =
@@ -348,10 +351,10 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             GoRouter.of(context).prepareAuthEvent();
@@ -371,9 +374,9 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                           options: FFButtonOptions(
                             width: 230.0,
                             height: 52.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).primary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -383,7 +386,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                                   color: Colors.white,
                                 ),
                             elevation: 3.0,
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1.0,
                             ),
@@ -393,16 +396,16 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                         child: FFButtonWidget(
                           onPressed: () async {
                             context.pushNamed(
                               'ForgotPassword',
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: const TransitionInfo(
+                                kTransitionInfoKey: TransitionInfo(
                                   hasTransition: true,
                                   transitionType: PageTransitionType.fade,
                                 ),
@@ -413,9 +416,9 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                           options: FFButtonOptions(
                             width: 230.0,
                             height: 44.0,
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
-                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -435,9 +438,9 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 16.0, 24.0),
                             child: Text(
                               'Or sign up with',
@@ -447,9 +450,9 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                           ),
                         ),
                         Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 16.0),
                             child: Wrap(
                               spacing: 16.0,
@@ -462,7 +465,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                               clipBehavior: Clip.none,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 16.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
@@ -477,17 +480,17 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                                           'home_page', context.mounted);
                                     },
                                     text: 'Continue with Google',
-                                    icon: const FaIcon(
+                                    icon: FaIcon(
                                       FontAwesomeIcons.google,
                                       size: 20.0,
                                     ),
                                     options: FFButtonOptions(
                                       width: 230.0,
                                       height: 44.0,
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 0.0, 0.0),
                                       iconPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -512,7 +515,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                                 isAndroid
                                     ? Container()
                                     : Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 16.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
@@ -528,7 +531,7 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                                                 'home_page', context.mounted);
                                           },
                                           text: 'Continue with Apple',
-                                          icon: const FaIcon(
+                                          icon: FaIcon(
                                             FontAwesomeIcons.apple,
                                             size: 20.0,
                                           ),
@@ -536,10 +539,10 @@ class _LoginLeilaoWidgetState extends State<LoginLeilaoWidget>
                                             width: 230.0,
                                             height: 44.0,
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             iconPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 0.0, 0.0),
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,

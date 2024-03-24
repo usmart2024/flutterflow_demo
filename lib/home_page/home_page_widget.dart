@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
 
@@ -56,7 +58,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 borderRadius: 30.0,
                 borderWidth: 1.0,
                 buttonSize: 60.0,
-                icon: const Icon(
+                icon: Icon(
                   Icons.save_rounded,
                   color: Colors.white,
                   size: 30.0,
@@ -66,7 +68,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 },
               ),
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                 child: Text(
                   'Cadastro de Leilao\n',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -78,14 +80,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               ),
             ],
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 2.0,
         ),
         body: SafeArea(
           top: true,
           child: Container(
-            decoration: const BoxDecoration(),
+            decoration: BoxDecoration(),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -109,13 +111,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       }
                       List<CasasRecord> pageViewCasasRecordList =
                           snapshot.data!;
-                      return SizedBox(
+                      return Container(
                         width: double.infinity,
                         height: 500.0,
                         child: Stack(
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 40.0),
                               child: PageView.builder(
                                 controller: _model.pageViewController ??=
@@ -151,7 +153,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       children: [
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 70.0, 0.0, 0.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
@@ -159,7 +161,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         20.0, 0.0, 0.0, 0.0),
                                                 child: Text(
@@ -198,7 +200,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         Container(
                                           width: double.infinity,
                                           height: 100.0,
-                                          decoration: const BoxDecoration(
+                                          decoration: BoxDecoration(
                                             color: Color(0x5FFFFFFF),
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(0.0),
@@ -224,7 +226,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(5.0, 0.0,
                                                                 0.0, 0.0),
                                                     child: Text(
@@ -245,11 +247,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 text: 'Mais detalhes',
                                                 options: FFButtonOptions(
                                                   height: 40.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
                                                   color: FlutterFlowTheme.of(
@@ -265,7 +267,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             color: Colors.white,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -284,9 +286,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ),
                             ),
                             Align(
-                              alignment: const AlignmentDirectional(-1.0, 1.0),
+                              alignment: AlignmentDirectional(-1.0, 1.0),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     16.0, 0.0, 0.0, 16.0),
                                 child:
                                     smooth_page_indicator.SmoothPageIndicator(
@@ -302,7 +304,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     await _model.pageViewController!
                                         .animateToPage(
                                       i,
-                                      duration: const Duration(milliseconds: 500),
+                                      duration: Duration(milliseconds: 500),
                                       curve: Curves.ease,
                                     );
                                   },
